@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <script>
+      const curSong = <%- JSON.stringify(locals.song) || 'undefined' %>
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <script src="/script.js" defer></script>
+    <title>Piano Recorder</title>
+  </head>
+  <body>
+    <div class="all-buttons">
+      <% if(locals.song == null) { %>
+      <button class="record-btn btn">Record</button>
+      <button class="save-btn btn">Save</button>
+      <% } else { %>
+      <a href="/" class="btn">Record New Song</a>
+      <% } %>
+      <button class="play-btn btn <%= locals.song != null ? 'show' : ''%>">
+        Play
+      </button>
+    </div>
+    <a href="#" class="btn song-link"> View Song</a>
+
+    <div class="piano">
+      <div data-note="C" class="key white"></div>
+      <div data-note="Db" class="key black"></div>
+      <div data-note="D" class="key white"></div>
+      <div data-note="Eb" class="key black"></div>
+      <div data-note="E" class="key white"></div>
+      <div data-note="F" class="key white"></div>
+      <div data-note="Gb" class="key black"></div>
+      <div data-note="G" class="key white"></div>
+      <div data-note="Ab" class="key black"></div>
+      <div data-note="A" class="key white"></div>
+      <div data-note="Bb" class="key black"></div>
+      <div data-note="B" class="key white"></div>
+      <div data-note="C1" class="key white"></div>
+      <div data-note="Db1" class="key black"></div>
+      <div data-note="D1" class="key white"></div>
+      <div data-note="Eb1" class="key black"></div>
+      <div data-note="E1" class="key white"></div>
+      <div data-note="F1" class="key white"></div>
+      <div data-note="Gb1" class="key black"></div>
+      <div data-note="G1" class="key white"></div>
+      <div data-note="Ab1" class="key black"></div>
+      <div data-note="A1" class="key white"></div>
+      <div data-note="Bb1" class="key black"></div>
+      <div data-note="B1" class="key white"></div>
+    </div>
+
+    <audio src="/notes/key08.mp3" id="C"></audio>
+    <audio src="/notes/key09.mp3" id="Db"></audio>
+    <audio src="/notes/key10.mp3" id="D"></audio>
+    <audio src="/notes/key11.mp3" id="Eb"></audio>
+    <audio src="/notes/key12.mp3" id="E"></audio>
+    <audio src="/notes/key01.mp3" id="F"></audio>
+    <audio src="/notes/key02.mp3" id="Gb"></audio>
+    <audio src="/notes/key03.mp3" id="G"></audio>
+    <audio src="/notes/key04.mp3" id="Ab"></audio>
+    <audio src="/notes/key05.mp3" id="A"></audio>
+    <audio src="/notes/key06.mp3" id="Bb"></audio>
+    <audio src="/notes/key07.mp3" id="B"></audio>
+    <audio src="/notes/key20.mp3" id="C1"></audio>
+    <audio src="/notes/key21.mp3" id="Db1"></audio>
+    <audio src="/notes/key22.mp3" id="D1"></audio>
+    <audio src="/notes/key23.mp3" id="Eb1"></audio>
+    <audio src="/notes/key24.mp3" id="E1"></audio>
+    <audio src="/notes/key13.mp3" id="F1"></audio>
+    <audio src="/notes/key14.mp3" id="Gb1"></audio>
+    <audio src="/notes/key15.mp3" id="G1"></audio>
+    <audio src="/notes/key16.mp3" id="Ab1"></audio>
+    <audio src="/notes/key17.mp3" id="A1"></audio>
+    <audio src="/notes/key18.mp3" id="Bb1"></audio>
+    <audio src="/notes/key19.mp3" id="B1"></audio>
+  </body>
+</html>
